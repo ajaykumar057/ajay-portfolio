@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level Up with Ajay</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Press Start 2P', cursive;
+      background: black;
+      color: #00ffcc;
+      cursor: url('assets/cursor-sword.png'), auto;
+    }
+    .glow {
+      text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+    }
+    .btn-pixel {
+      border: 3px solid #0ff;
+      padding: 1rem 2rem;
+      background: black;
+      color: #0ff;
+      box-shadow: 4px 4px 0 #0ff;
+      transition: all 0.2s;
+    }
+    .btn-pixel:hover {
+      transform: scale(1.05);
+      box-shadow: 2px 2px 0 #ff00ff;
+      color: #ff00ff;
+      border-color: #ff00ff;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Music -->
+  <audio id="bg-music" src="assets/retro-music.mp3" autoplay loop></audio>
+
+  <!-- Splash Screen -->
+  <section id="splash" class="h-screen flex flex-col items-center justify-center text-center">
+    <h1 class="text-3xl md:text-5xl glow mb-6">🎮 Level Up with Ajay</h1>
+    <p class="mb-8 text-lg glow animate-pulse">Press Start to Enter</p>
+    <div class="space-y-4">
+      <button onclick="goTo('about')" class="btn-pixel">🟢 New Game</button><br>
+      <button onclick="goTo('projects')" class="btn-pixel">🔵 Load Game</button><br>
+      <button onclick="goTo('skills')" class="btn-pixel">🔴 Settings</button><br>
+      <button onclick="goTo('resume')" class="btn-pixel">🟡 Credits</button><br>
+      <button onclick="goTo('contact')" class="btn-pixel">📞 Final Boss</button>
+    </div>
+  </section>
+
+  <!-- About Me -->
+  <section id="about" class="hidden h-screen p-6 text-center">
+    <img src="assets/ajay-avatar.png" class="mx-auto w-32 h-32 mb-4" alt="Ajay Avatar">
+    <div class="bg-black border-4 border-green-500 p-4 inline-block">
+      <p>Meet <strong>Ajay Kumar</strong>, a curious coder on a mission to save the digital world!</p>
+      <p>🎯 Special Powers: Frontend Magic, Backend Logic, Bug Slayer.</p>
+    </div>
+    <button onclick="goTo('splash')" class="mt-6 btn-pixel">⬅️ Back</button>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="hidden h-screen p-6 text-center">
+    <h2 class="text-xl mb-4 glow">🧰 Inventory</h2>
+    <div class="flex flex-wrap justify-center gap-4">
+      <div class="btn-pixel" title="Slashes through UI complexity">⚔️ React</div>
+      <div class="btn-pixel" title="Protects containerized services">🛡️ Docker</div>
+      <div class="btn-pixel" title="Magic wand for data">🧪 Python</div>
+      <div class="btn-pixel" title="Stylish UI alchemy">🎨 Tailwind CSS</div>
+      <div class="btn-pixel" title="Tools of DevOps mastery">🔧 Git & CI/CD</div>
+    </div>
+    <button onclick="goTo('splash')" class="mt-6 btn-pixel">⬅️ Back</button>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="hidden h-screen p-6 text-center overflow-y-auto">
+    <h2 class="text-xl mb-4 glow">🚧 Battle Zone</h2>
+    <p class="text-sm mt-2 animate-bounce">⬇️ Scroll for more</p>
+    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+      <!-- VolatiSense -->
+      <div class="border border-green-400 p-4 bg-black">
+        <h3 class="text-lg glow">📊 VolatiSense</h3>
+        <img src="assets/project-gifs/volatisense.gif" alt="VolatiSense" class="mx-auto my-2">
+        <p><strong>Boss Level:</strong> Financial risk assessment using VaR and CVaR</p>
+        <p><strong>Power-up:</strong> Docker, React, Node.js, Python</p>
+      </div>
+      <!-- Testwise -->
+      <div class="border border-green-400 p-4 bg-black">
+        <h3 class="text-lg glow">📄 Testwise</h3>
+        <img src="assets/project-gifs/testwise.gif" alt="Testwise" class="mx-auto my-2">
+        <p><strong>Boss Level:</strong> AI-based document analysis</p>
+        <p><strong>Power-up:</strong> Django, SQLite, Mistral AI</p>
+      </div>
+      <!-- Live Sports Score Website -->
+      <div class="border border-green-400 p-4 bg-black">
+        <h3 class="text-lg glow">⚽ Live Sports Score Website</h3>
+        <img src="assets/project-gifs/sports.gif" alt="Live Sports" class="mx-auto my-2">
+        <p><strong>Boss Level:</strong> Real-time sports data UI</p>
+        <p><strong>Power-up:</strong> Django, API integration</p>
+      </div>
+      <!-- Load Forecasting -->
+      <div class="border border-green-400 p-4 bg-black">
+        <h3 class="text-lg glow">⚡ Load Forecasting & Anomaly Detection</h3>
+        <img src="assets/project-gifs/forecast.gif" alt="Load Forecasting" class="mx-auto my-2">
+        <p><strong>Boss Level:</strong> LSTM-based energy load predictor</p>
+        <p><strong>Power-up:</strong> Python, LSTM, Anomaly Detection</p>
+      </div>
+    </div>
+    <button onclick="goTo('splash')" class="mt-6 btn-pixel">⬅️ Back</button>
+  </section>
+
+  <!-- Resume -->
+  <section id="resume" class="hidden h-screen p-6 text-center">
+    <h2 class="text-xl mb-4 glow">📜 Game Manual</h2>
+    <a href="Ajay-Kumar-FlowCV-Resume-20250511.pdf" class="btn-pixel" download>📄 Download Game Guide</a>
+    <div class="mt-4">
+      <img src="assets/skill-tree.png" class="mx-auto w-full max-w-md" alt="Skill Tree">
+    </div>
+    <button onclick="goTo('splash')" class="mt-6 btn-pixel">⬅️ Back</button>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="hidden h-screen p-6 text-green-500 bg-black text-center">
+    <h2 class="text-xl glow mb-4">📞 Final Boss Room</h2>
+    <div class="bg-black border-4 border-green-400 p-4 inline-block">
+      <code class="block mb-2">say_hi --to ajayk780191@gmail.com</code>
+      <form class="flex flex-col gap-4">
+        <input type="text" placeholder="Name" class="bg-black border border-green-400 p-2">
+        <input type="email" placeholder="Email" class="bg-black border border-green-400 p-2">
+        <textarea placeholder="Message" class="bg-black border border-green-400 p-2"></textarea>
+        <button type="submit" class="btn-pixel">📨 Send</button>
+      </form>
+    </div>
+    <p class="mt-4 text-sm">Try the Konami Code 😉</p>
+    <button onclick="goTo('splash')" class="mt-6 btn-pixel">⬅️ Back</button>
+  </section>
+
+  <!-- Easter Egg: Konami Code -->
+  <script>
+    let input = [];
+    const secret = ["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"];
+    window.addEventListener('keydown', e => {
+      input.push(e.key);
+      input.splice(-secret.length - 1, input.length - secret.length);
+      if (input.join('') === secret.join('')) {
+        alert('🎉 Easter Egg Unlocked! You found the secret power!');
+      }
+    });
+
+    function goTo(id) {
+      document.querySelectorAll("section").forEach(sec => sec.classList.add("hidden"));
+      document.getElementById(id).classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
